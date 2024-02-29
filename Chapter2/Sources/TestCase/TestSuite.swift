@@ -10,13 +10,13 @@ import Foundation
 
 class TestSuite{
  
-    var tests: [TestCaseTest]
+    var tests: [TestCase]
     
     init() {
         self.tests = []
     }
     
-    func add(_ testCase: TestCaseTest){
+    func add(_ testCase: TestCase){
         self.tests.append(testCase)
     }
     

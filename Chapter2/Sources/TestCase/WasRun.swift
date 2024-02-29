@@ -34,7 +34,7 @@ class WasRun: TestCase{
     }
     
     @objc
-    func testBrokenMethod(){
+    func testBrokenMethod() throws{
         assertionFailure()
     }
 }

@@ -11,23 +11,16 @@ import Foundation
 
 class TestCaseTest: TestCase{
 
+    var result: TestResult!
     
-    static func suite() -> TestSuite{
-        let suite = TestSuite()
-        
-        suite.add(TestCaseTest("testTemplateMethod"))
-        suite.add(TestCaseTest("testResult"))
-        suite.add(TestCaseTest("testFailedResult"))
-        suite.add(TestCaseTest("testFailedResultFormatting"))
-
-        return suite
+    override func setup() {
+        result = TestResult()
+        super.setup()
     }
-    
 
     @objc
     func testTemplateMethod(){
         let test = WasRun("testMethod")
-        let result = TestResult()
         test.run(result)
         assert("setUp testMethod tearDown" == test.log)
     }
@@ -35,7 +28,6 @@ class TestCaseTest: TestCase{
     @objc
     func testResult(){
         let test = WasRun("testMethod")
-        let result = TestResult()
         test.run(result)
         assert("1 run, 0 failed" == result.summery())
     }
@@ -43,18 +35,25 @@ class TestCaseTest: TestCase{
     @objc
     func testFailedResult() {
         let test = WasRun("testBrokenMethod")        
-        let result = TestResult()
         test.run(result)
         assert("1 run, 1 failed" == result.summery())
     }
     
     @objc
     func testFailedResultFormatting(){
-        let result = TestResult()
         result.testStarted()
         result.testFailed()
         assert("1 run, 1 failed" == result.summery())
-    }       
+    }     
+    
+    @objc
+    func testSuite(){
+        let suite = TestSuite()
+        suite.add(WasRun("testMethod"))
+        suite.add(WasRun("testBrokenMethod"))
+        suite.run(result)
+        assert("1 run, 1 failed" == result.summery())
+    }
 }
 
 

@@ -17,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		875738DF2B8DE3240041E1C3 /* LineReader */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LineReader; sourceTree = "<group>"; };
 		879017582B8CD917006D6338 /* TDD-ByExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TDD-ByExample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8790175B2B8CD917006D6338 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8790175D2B8CD917006D6338 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 			children = (
 				879017732B8CD92F006D6338 /* Chapter1 */,
 				879017742B8CD92F006D6338 /* Chapter2 */,
+				875738DF2B8DE3240041E1C3 /* LineReader */,
 				8790175A2B8CD917006D6338 /* TDD-ByExample */,
 				879017592B8CD917006D6338 /* Products */,
 			);
